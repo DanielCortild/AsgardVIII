@@ -29,19 +29,23 @@ void setup() {
 
 uint32_t timer =  millis();
 
+String data;
+
 void loop() {
+
+  data = "";
 
   while( millis() - timer < 500 )
   {
   }
 
-  timer = millis();
+  if( !beg()) Serial.println("Error!!");
 
-  if( !beg()) saveData("Error!!");
-
-  delay(100);
-
-  getTSL();
   getBMP();
+  getTSL();
+
+  saveData(data);
+
+  timer = millis();
    
 }

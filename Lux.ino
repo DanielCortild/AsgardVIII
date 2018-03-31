@@ -1,8 +1,6 @@
 void getTSL()
 {
 
-  String data = "Lux: ";
-
   uint16_t x = tsl.getLuminosity(TSL2561_VISIBLE);
   data += (String)(x);
   data += ";";
@@ -17,8 +15,6 @@ void getTSL()
   data += (String)(full - ir);
   data += ";";
   data += (String)(tsl.calculateLux(full, ir));
-
-  saveData(data);
 
 }
 
